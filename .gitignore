@@ -1,3 +1,13 @@
+# PlanetPlanet
+*.tmplc
+poplus/cache/
+poplus/output/atom.xml
+poplus/output/foafroll.xml
+poplus/output/index.html
+poplus/output/opml.xml
+poplus/output/rss10.xml
+poplus/output/rss20.xml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
