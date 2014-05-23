@@ -5,28 +5,28 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
 
+  <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
+  <style>
+    body {
+      font-family: 'Muli', sans-serif;
+    }
+  </style>
+
   <title><TMPL_VAR name></title>
 </head>
 <body>
 
   <div class="container">
-
+    
     <div class="header">
-      <!--
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      -->
-
-      <h1 class="text-muted"><i class="fa fa-globe fa-3"></i> <TMPL_VAR name></h1>
+      <h1><i class="fa fa-globe fa-3"></i> <TMPL_VAR name></h1>
     </div>
 
     <div class="content">
@@ -35,13 +35,13 @@
           <TMPL_LOOP Items>
             <div class="row">
               <div class="col-md-2">
+                <TMPL_IF channel_face>
+                  <img class="img-responsive img-circle hidden-xs" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="<TMPL_VAR channel_name>" title="<TMPL_VAR channel_name>">
+                </TMPL_IF>
                 <TMPL_IF new_channel>
                   <h4>
                     <a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title ESCAPE="HTML">"><TMPL_VAR channel_name></a>
                   </h4>
-                </TMPL_IF>
-                <TMPL_IF channel_face>
-                  <img class="face" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="">
                 </TMPL_IF>
                 <TMPL_IF new_date>
                   <span class="publish_date"><TMPL_VAR new_date></span>
@@ -61,6 +61,7 @@
                 </p>
               </div>
             </div>
+            <hr>
           </TMPL_LOOP>
         </div>
         <div class="col-md-4">
