@@ -5,6 +5,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
 
+  <link rel="alternate" type="application/rss+xml" title="RSS 1.0" href="/rss10.xml" >
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss20.xml" >
+  <link rel="alternate" type="application/rss+xml" title="Atom" href="/atom.xml" >
+
   <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -16,6 +20,11 @@
   <style>
     body {
       font-family: 'Muli', sans-serif;
+    }
+    .bordecito {
+      border: 1px solid #CCC;
+      border-radius: 8px;
+      box-shadow: 2px 2px 2px #CCC;
     }
   </style>
 
@@ -47,7 +56,7 @@
       <div class="row">
         <div class="col-md-8">
           <TMPL_LOOP Items>
-            <div class="row">
+            <div class="row bordecito">
               <div class="col-md-2">
                 <TMPL_IF channel_face>
                   <img class="img-responsive img-circle hidden-xs" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="<TMPL_VAR channel_name>" title="<TMPL_VAR channel_name>">
@@ -79,6 +88,21 @@
           </TMPL_LOOP>
         </div>
         <div class="col-md-4">
+          <h5>RSS</h5>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fa fa-rss"></i>
+              <a href="/rss10.xml">RSS 1.0</a>
+            </li>
+            <li>
+              <i class="fa fa-rss"></i>
+              <a href="/rss20.xml">RSS 2.0</a>
+            </li>
+            <li>
+              <i class="fa fa-rss"></i>
+              <a href="/atom.xml">ATOM 1.0</a>
+            </li>
+          </ul>
           <h5>Feeds</h5>
           <ul class="list-unstyled">
             <TMPL_LOOP Channels>
@@ -98,6 +122,13 @@
     </div>
     
   </div>
+
+  <script>
+    $(document).ready()
+    {
+      $('img').addClass('img-responsive');
+    }
+  </script>
   
 </body>
 </html>
