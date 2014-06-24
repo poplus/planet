@@ -79,6 +79,15 @@
           </TMPL_LOOP>
         </div>
         <div class="col-md-4">
+          <h5>Subscribe via email</h5>
+          <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=PlanetPoplus', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+            <p>
+              <input type="text" name="email" id="email" placeholder="Email address">
+              <input type="submit" value="Subscribe">
+            </p>
+            <input type="hidden" value="PlanetPoplus" name="uri">
+            <input type="hidden" value="en_US" name="loc">
+          </form>
           <h5>Feeds</h5>
           <ul class="list-unstyled">
             <TMPL_LOOP Channels>
