@@ -1,7 +1,7 @@
 Planet Poplus
 =============
 
-Planet Poplus is powered by Planet Planet, the awesome 'river of news' feed reader.
+Check what's going on in the Poplus community. Powered by Planet Planet, the awesome 'river of news' feed reader.
 
 
 ### Everything else:
